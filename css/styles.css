@@ -1,0 +1,204 @@
+/* GENERAL/RESET */
+:root {
+    /* PRIMARY TEXT */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* BACKGROUND-RADIENT */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    /* NEUTRAL-TEXT */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    /* DIVIDERS */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(var(--soft-violet), #6862e6);
+    font-size: 12px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* MAIN */
+.faq-card {
+    width: 320px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0 2em;
+    margin: 10em 0;
+}
+
+/* CARD */
+.faq-card-top {
+    position: relative;
+    width: 100%;
+    padding: 5em;
+}
+
+.card-top-img {
+    background-image: url(../images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 230px;
+    height: 175px;
+    position: absolute;
+    left: 25px;
+    bottom: 50px;
+}
+
+header h1 {
+    color: var(--very-dark-grayish-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0 0 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.faq-section {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    display: grid;
+    grid-template-areas:
+        "h2 h2 h2 img"
+        "p  p  p  img";
+    grid-template-columns: 1.25fr 1.25fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+}
+
+.faq-section label:hover {
+    color: var(--soft-red);
+    cursor: pointer;
+}
+
+.faq-section label {
+    grid-area: h2;
+    color: var(--very-dark-grayish-blue);
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 1.25em 0;
+    text-align: left;
+}
+
+.faq-section img {
+    grid-area: img;
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.faq-section p {
+    display: none;
+    grid-area: p;
+    color: var(--dark-grayish-blue);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    padding: 0 0 1.25em;
+}
+
+/* FAQ DROPDOWN ANSWERS */
+input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input[type="checkbox"]:checked ~ label {
+    font-weight: 700;
+}
+
+input[type="checkbox"]:checked ~ p {
+    display: block;
+}
+
+input[type="checkbox"]:checked ~ img {
+    transform: rotateX(180deg);
+}
+
+.faq-section:last-child {
+    margin: 0 0 5em;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 1440px) {
+    .faq-card {
+        width: 900px;
+        min-height: 475px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        padding: 4em 4em 4em 0;
+        margin: 0;
+    }
+
+    header h1 {
+        text-align: left;
+    }
+
+    .faq-card-top {
+        overflow: hidden;
+    }
+
+    .card-top-img {
+        background-image: url(../images/illustration-woman-online-desktop.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: -80px;
+        bottom: -50px;
+    }
+
+    .card-top-box-img {
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .faq-section h2 {
+        font-size: 1rem;
+    }
+
+    .faq-section p {
+        font-size: 0.8rem;
+    }
+}
