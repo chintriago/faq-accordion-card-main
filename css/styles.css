@@ -133,6 +133,10 @@ header h1 {
     padding: 0 0 1.25em;
 }
 
+.faq-section:last-child {
+    margin: 0 0 5em;
+}
+
 /* FAQ DROPDOWN ANSWERS */
 input[type="checkbox"] {
     opacity: 0;
@@ -144,20 +148,16 @@ input[type="checkbox"]:checked ~ label {
     font-weight: 700;
 }
 
-input[type="checkbox"]:checked ~ p {
-    display: block;
-}
-
 input[type="checkbox"]:checked ~ img {
     transform: rotateX(180deg);
 }
 
-.faq-section:last-child {
-    margin: 0 0 5em;
+input[type="checkbox"]:checked ~ p {
+    display: block;
 }
 
 /* MEDIA QUERIES */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1000px) {
     .faq-card {
         width: 900px;
         min-height: 475px;
@@ -185,9 +185,6 @@ input[type="checkbox"]:checked ~ img {
         position: absolute;
         left: -80px;
         bottom: -50px;
-    }
-
-    .card-top-box-img {
     }
 
     header h1 {
