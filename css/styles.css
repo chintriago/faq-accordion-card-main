@@ -58,7 +58,7 @@ img {
     height: auto;
 }
 
-/* MAIN */
+/* CARD CONTAINER */
 .faq-card {
     width: 320px;
     background-color: white;
@@ -67,7 +67,17 @@ img {
     margin: 10em 0;
 }
 
-/* CARD */
+/* CARD HEADER SECTION */
+header h1 {
+    color: var(--very-dark-grayish-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0 0 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* CARD TOP SECTION */
 .faq-card-top {
     position: relative;
     width: 100%;
@@ -85,32 +95,28 @@ img {
     bottom: 50px;
 }
 
-header h1 {
-    color: var(--very-dark-grayish-blue);
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 0 0 0.5em;
-    text-align: center;
-    text-transform: uppercase;
-}
+/* CARD BOTTOM SECTION */
 
 .faq-section {
     border-bottom: 1px solid var(--light-grayish-blue);
     display: grid;
     grid-template-areas:
-        "h2 h2 h2 img"
+        "label label label img"
         "p  p  p  img";
     grid-template-columns: 1.25fr 1.25fr 1fr 0.5fr;
     grid-template-rows: 1fr;
 }
 
 .faq-section label:hover {
-    color: var(--soft-red);
     cursor: pointer;
 }
 
+.faq-section label:active {
+    color: var(--soft-red);
+}
+
 .faq-section label {
-    grid-area: h2;
+    grid-area: label;
     color: var(--very-dark-grayish-blue);
     font-size: 0.8rem;
     font-weight: 400;
@@ -137,7 +143,7 @@ header h1 {
     margin: 0 0 5em;
 }
 
-/* FAQ DROPDOWN ANSWERS */
+/* CARD FAQ DROPDOWN ANSWERS */
 input[type="checkbox"] {
     opacity: 0;
     width: 0;
@@ -158,22 +164,35 @@ input[type="checkbox"]:checked ~ p {
 
 /* MEDIA QUERIES */
 @media only screen and (min-width: 1000px) {
+    /* CARD CONTAINER */
     .faq-card {
         width: 900px;
         min-height: 475px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        padding: 4em 4em 4em 0;
+        padding: 0;
         margin: 0;
     }
 
+    /* CARD HEADER SECTION*/
     header h1 {
+        font-size: 2rem;
         text-align: left;
     }
 
+    /* CARD IMG SECTION */
     .faq-card-top {
         overflow: hidden;
+        padding: 0;
+    }
+
+    .faq-card-bottom {
+        margin: auto 0;
+    }
+
+    .faq-section:last-child {
+        margin: 0;
     }
 
     .card-top-img {
@@ -187,15 +206,32 @@ input[type="checkbox"]:checked ~ p {
         bottom: -50px;
     }
 
-    header h1 {
-        font-size: 2rem;
+    /* CARD text SECTION */
+    .faq-section {
+        border-bottom: 1px solid var(--light-grayish-blue);
+        display: grid;
+        grid-template-areas:
+            "label label img"
+            "p p img";
+        grid-template-columns: 1.25fr 1.25fr 0.5fr;
+        grid-template-rows: 1fr;
     }
 
-    .faq-section h2 {
+    .faq-section img {
+        grid-area: img;
+        justify-self: flex-start;
+        align-self: center;
+    }
+
+    .faq-section label {
         font-size: 1rem;
     }
 
     .faq-section p {
         font-size: 0.8rem;
+    }
+
+    .faq-section label:hover {
+        color: var(--soft-red);
     }
 }
