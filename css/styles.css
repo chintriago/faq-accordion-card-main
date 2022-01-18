@@ -69,6 +69,7 @@ img {
     background-image: url(../images/bg-pattern-mobile.svg);
     background-repeat: no-repeat;
     background-position: 43px -05px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 35px 40px -20px;
 }
 
 /* CARD HEADER SECTION */
