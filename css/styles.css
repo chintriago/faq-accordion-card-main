@@ -25,6 +25,7 @@ body {
     background-image: linear-gradient(var(--soft-violet), #6862e6);
     font-size: 12px;
     font-family: "Kumbh Sans", sans-serif;
+    overflow-x: hidden;
 }
 
 *,
@@ -65,6 +66,9 @@ img {
     border-radius: 20px;
     padding: 0 2em;
     margin: 10em 0;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: 43px -05px;
 }
 
 /* CARD HEADER SECTION */
@@ -77,7 +81,7 @@ header h1 {
     text-transform: uppercase;
 }
 
-/* CARD TOP SECTION */
+/* CARD IMG SECTION */
 .faq-card-top {
     position: relative;
     width: 100%;
@@ -95,7 +99,11 @@ header h1 {
     bottom: 50px;
 }
 
-/* CARD BOTTOM SECTION */
+.card-top-box-img {
+    display: none;
+}
+
+/* CARD TEXT SECTION */
 
 .faq-section {
     border-bottom: 1px solid var(--light-grayish-blue);
@@ -140,7 +148,7 @@ header h1 {
 }
 
 .faq-section:last-child {
-    margin: 0 0 5em;
+    margin-bottom: 4em;
 }
 
 /* CARD FAQ DROPDOWN ANSWERS */
@@ -163,7 +171,7 @@ input[type="checkbox"]:checked ~ p {
 }
 
 /* MEDIA QUERIES */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1440px) {
     /* CARD CONTAINER */
     .faq-card {
         width: 900px;
@@ -173,26 +181,25 @@ input[type="checkbox"]:checked ~ p {
         grid-template-rows: 1fr;
         padding: 0;
         margin: 0;
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 700px 700px;
+        background-position: -325px -175px;
+        z-index: 0;
     }
 
     /* CARD HEADER SECTION*/
     header h1 {
         font-size: 2rem;
         text-align: left;
+        padding: 1em 0;
     }
 
     /* CARD IMG SECTION */
+
     .faq-card-top {
         overflow: hidden;
         padding: 0;
-    }
-
-    .faq-card-bottom {
-        margin: auto 0;
-    }
-
-    .faq-section:last-child {
-        margin: 0;
     }
 
     .card-top-img {
@@ -206,8 +213,25 @@ input[type="checkbox"]:checked ~ p {
         bottom: -50px;
     }
 
-    /* CARD text SECTION */
+    .card-top-box-img {
+        display: block;
+        width: 180px;
+        height: 115px;
+        background-image: url(../images/illustration-box-desktop.svg);
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 340px;
+        left: 180px;
+        z-index: 1;
+    }
+
+    /* CARD TEXT SECTION */
+    .faq-card-bottom {
+        margin: auto 0;
+    }
+
     .faq-section {
+        width: 400px;
         border-bottom: 1px solid var(--light-grayish-blue);
         display: grid;
         grid-template-areas:
